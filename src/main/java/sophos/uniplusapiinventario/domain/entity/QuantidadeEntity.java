@@ -23,6 +23,9 @@ public class QuantidadeEntity {
     @Column( name = "quantidade")
     private Double quantidade;
 
+    @Column (name = "codigoproduto")
+    private Integer codProd;
+
     @Column(name = "nomeproduto")
     private String nome;
 
