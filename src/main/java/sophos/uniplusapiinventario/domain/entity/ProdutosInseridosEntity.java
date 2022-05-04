@@ -1,24 +1,27 @@
-//package sophos.uniplusapiinventario.domain.entity;
-//
-//import lombok.AllArgsConstructor;
-//import lombok.Builder;
-//import lombok.Data;
-//import lombok.NoArgsConstructor;
-//
-//import javax.persistence.Column;
-//import javax.persistence.Entity;
-//import javax.persistence.Id;
-//import javax.persistence.Table;
-//
-//@Entity
-//@Data
-//@Builder
-//@AllArgsConstructor
-//@NoArgsConstructor
-//@Table(name="inventario")
-//public class ProdutosInseridosEntity {
-//    @Id
-//    private Integer id;
-//
-//
-//}
+package sophos.uniplusapiinventario.domain.entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+
+@Entity
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class ProdutosInseridosEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    private Integer idProduto;
+    private String nome;
+    private long codProduto;
+    private String unidade;
+    private int qtdEstocada;
+    private int qtdReservada;
+
+}
