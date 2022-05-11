@@ -58,7 +58,6 @@ public class ProdutoController {
             produto.setNome(produtoPutRequestBody.getNome());
             produto.setCodProduto(produtoPutRequestBody.getCodProduto());
             produto.setUnidade(produtoPutRequestBody.getUnidade());
-            produto.setGrupo(produtoPutRequestBody.getGrupo());
             produto.setQuantidade(produtoPutRequestBody.getQuantidade());
             produtoRepository.save(produto);
             return new ResponseEntity<ProdutoEntity>(produto, HttpStatus.OK);

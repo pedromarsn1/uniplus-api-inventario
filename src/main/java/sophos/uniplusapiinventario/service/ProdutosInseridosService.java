@@ -32,9 +32,10 @@ public class ProdutosInseridosService {
 
         return produtosInseridosRepository.save(ProdutosInseridosEntity.builder()
                 .id(produtosInseridosPostRequestBody.getId())
+//                .idProduto(produtosInseridosPostRequestBody.getIdProduto())
+                .codProduto(produtosInseridosPostRequestBody.getCodProduto())
                 .nome(produtosInseridosPostRequestBody.getNome())
                 .unidade(produtosInseridosPostRequestBody.getUnidade())
-                .codProduto(produtosInseridosPostRequestBody.getCodProduto())
                 .qtdEstocada(produtosInseridosPostRequestBody.getQtdEstocada())
                 .qtdReservada(produtosInseridosPostRequestBody.getQtdReservada())
                 .build());

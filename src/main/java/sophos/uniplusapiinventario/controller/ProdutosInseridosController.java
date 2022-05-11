@@ -1,5 +1,6 @@
 package sophos.uniplusapiinventario.controller;
 
+import com.sun.istack.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,12 +14,18 @@ import sophos.uniplusapiinventario.requests.produtos_inseridos.ProdutosInseridos
 import sophos.uniplusapiinventario.service.ProdutosInseridosService;
 import sophos.uniplusapiinventario.util.DateUtil;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
+import static java.util.stream.Collectors.joining;
+import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
+
 @RestController // faz com que o retorno dos dados sejam apenas strings
-@RequestMapping("produtos-inseridos") // rota no nível da classe
+@RequestMapping(value = "produtos-inseridos", produces = APPLICATION_JSON_UTF8_VALUE) // rota no nível da classe
 @Log4j2
 @RequiredArgsConstructor
 public class ProdutosInseridosController {
@@ -26,6 +33,16 @@ public class ProdutosInseridosController {
     private final DateUtil dateUtil;
     private final ProdutosInseridosRepository produtosInseridosRepository;
     private final ProdutosInseridosService produtosInseridosService;
+
+   @NotNull
+    private String encodeValue(String value) {
+           try {
+               return URLEncoder.encode(value, StandardCharsets.UTF_8.toString());
+           } catch (UnsupportedEncodingException ex) {
+               throw new RuntimeException(ex.getCause());
+           }
+   }
+
 
     @GetMapping
     public ResponseEntity<List<ProdutosInseridosEntity>> list() {

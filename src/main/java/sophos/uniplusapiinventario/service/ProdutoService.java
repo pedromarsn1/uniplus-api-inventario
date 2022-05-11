@@ -35,7 +35,6 @@ public class ProdutoService { //responsável pela regra de negócios
         return produtoRepository.save(ProdutoEntity.builder()
                 .id(produtoPostRequestBody.getId())
                 .nome(produtoPostRequestBody.getNome())
-                .grupo(produtoPostRequestBody.getGrupo())
                 .unidade(produtoPostRequestBody.getUnidade())
                 .codProduto(produtoPostRequestBody.getCodProduto())
                 .quantidade(produtoPostRequestBody.getQuantidade())
