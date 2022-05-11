@@ -46,6 +46,4 @@ public class ProdutoService { //responsável pela regra de negócios
         produtoRepository.delete(findbyidOrThrowBadRequestException(id));
     }
 
-
-
 }

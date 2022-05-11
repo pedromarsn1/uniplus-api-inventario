@@ -16,16 +16,16 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class GravarProdutosReservadosEntity {
+public class GravarProdutosReservadosEstocadosEntity {
     @Id
     private Integer id;
 
     @Column(name = "idproduto")
-    private Integer idProdouto;
+    private Integer idProduto;
 
-    @Column(name = "quantidadentrada")
+    @Column(name = "quantidadeentrada")
     private Integer qtdEstocada;
 
     @Column(name = "quantidadesaida")
-    private Integer qtdreservada;
+    private Integer qtdReservada;
 }
