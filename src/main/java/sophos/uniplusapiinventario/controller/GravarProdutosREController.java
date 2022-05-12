@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import sophos.uniplusapiinventario.domain.entity.gravar_produtos.GravarProdutosReservadosEstocadosEntity;
+import sophos.uniplusapiinventario.domain.entity.GravarProdutosReservadosEstocadosEntity;
 import sophos.uniplusapiinventario.repository.GravarProdutosReservadosEstocadosRepository;
 import sophos.uniplusapiinventario.requests.gravar_produtos.GravarProdutosREPostBody;
 import sophos.uniplusapiinventario.requests.gravar_produtos.GravarProdutosREPutBody;
@@ -53,7 +53,6 @@ public class GravarProdutosREController {
             produto.setId(gravarProdutosREPutBody.getId());
             produto.setIdProduto(gravarProdutosREPutBody.getIdProduto());
             produto.setQtdEstocada(gravarProdutosREPutBody.getQtdEstocada());
-            produto.setQtdReservada(gravarProdutosREPutBody.getQtdReservada());
             gravarRERepository.save(produto);
             return new ResponseEntity<>(produto,HttpStatus.OK);
         }

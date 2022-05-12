@@ -7,5 +7,4 @@ public class GravarProdutosREPutBody {
     private Integer id;
     private Integer idProduto;
     private Integer qtdEstocada;
-    private Integer qtdReservada;
 }

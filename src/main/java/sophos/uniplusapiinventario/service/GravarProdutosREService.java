@@ -5,8 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
-import org.springframework.web.server.handler.ResponseStatusExceptionHandler;
-import sophos.uniplusapiinventario.domain.entity.gravar_produtos.GravarProdutosReservadosEstocadosEntity;
+import sophos.uniplusapiinventario.domain.entity.GravarProdutosReservadosEstocadosEntity;
 import sophos.uniplusapiinventario.repository.GravarProdutosReservadosEstocadosRepository;
 import sophos.uniplusapiinventario.requests.gravar_produtos.GravarProdutosREPostBody;
 
@@ -32,8 +31,7 @@ public class GravarProdutosREService {
         return gravarRERepository.save(GravarProdutosReservadosEstocadosEntity.builder()
                 .id(gravarProdutosREPostBody.getId())
                 .idProduto(gravarProdutosREPostBody.getIdProduto())
-                .qtdEstocada(gravarProdutosREPostBody.getQtdEstocada())
-                .qtdReservada(gravarProdutosREPostBody.getQtdReservada()).build());
+                .qtdEstocada(gravarProdutosREPostBody.getQtdEstocada()).build());
     }
 
     public void delete(int id){ gravarRERepository.delete(findByIdOrThrowBadRequestException(id));}

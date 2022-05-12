@@ -1,4 +1,4 @@
-package sophos.uniplusapiinventario.domain.entity.gravar_produtos;
+package sophos.uniplusapiinventario.domain.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,6 +16,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+//Aqui vai estar a quantidade que eu vou atualizar
 public class GravarProdutosReservadosEstocadosEntity {
     @Id
     private Integer id;
@@ -25,7 +26,4 @@ public class GravarProdutosReservadosEstocadosEntity {
 
     @Column(name = "quantidadeentrada")
     private Integer qtdEstocada;
-
-    @Column(name = "quantidadesaida")
-    private Integer qtdReservada;
 }
