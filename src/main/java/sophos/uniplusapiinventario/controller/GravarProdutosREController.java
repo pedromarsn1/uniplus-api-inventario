@@ -35,6 +35,11 @@ public class GravarProdutosREController {
     }
 
     @GetMapping(path = "/{id}")
+    public ResponseEntity<GravarProdutosReservadosEstocadosEntity> findById(@PathVariable int id){
+        return new ResponseEntity<>(gravarProdutosREService.findByIdOrThrowBadRequestException(id), HttpStatus.OK);
+    }
+
+    @PostMapping
     public ResponseEntity<GravarProdutosReservadosEstocadosEntity> save(@RequestBody GravarProdutosREPostBody gravarProdutosREPostBody){
         return new ResponseEntity<>(gravarProdutosREService.save(gravarProdutosREPostBody), HttpStatus.CREATED);
     }
@@ -46,7 +51,7 @@ public class GravarProdutosREController {
     }
 
     @PutMapping(path = "/{id}")
-    public ResponseEntity<GravarProdutosReservadosEstocadosEntity> Put(@PathVariable (value = "id") int id, @RequestBody GravarProdutosREPutBody gravarProdutosREPutBody){
+    public ResponseEntity<GravarProdutosReservadosEstocadosEntity> put(@PathVariable (value = "id") int id, @RequestBody GravarProdutosREPutBody gravarProdutosREPutBody){
         Optional<GravarProdutosReservadosEstocadosEntity> antigoProduto = gravarRERepository.findById(id);
         if (antigoProduto.isPresent()){
             GravarProdutosReservadosEstocadosEntity produto = antigoProduto.get();

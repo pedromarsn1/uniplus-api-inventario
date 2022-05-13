@@ -23,7 +23,8 @@ public class GravarProdutosREService {
 
     public GravarProdutosReservadosEstocadosEntity findByIdOrThrowBadRequestException(int id){
         return gravarRERepository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Produto não Encontrado"));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                        "Produto não Encontrado"));
 
     }
 
