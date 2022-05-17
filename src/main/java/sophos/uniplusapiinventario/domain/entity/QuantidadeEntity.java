@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "saldoestoque")
+@Table(name = "davitem")
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
