@@ -14,6 +14,7 @@ import sophos.uniplusapiinventario.requests.produtos_inseridos.ProdutosInseridos
 import sophos.uniplusapiinventario.service.ProdutosInseridosService;
 import sophos.uniplusapiinventario.util.DateUtil;
 
+import javax.transaction.Transactional;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;

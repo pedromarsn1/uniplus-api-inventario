@@ -13,6 +13,7 @@ import sophos.uniplusapiinventario.requests.unidade.UnidadePutRequestBody;
 import sophos.uniplusapiinventario.service.UnidadeService;
 import sophos.uniplusapiinventario.util.DateUtil;
 
+import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;

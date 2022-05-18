@@ -14,6 +14,7 @@ import sophos.uniplusapiinventario.requests.quantidade.QuantidadePutRequestBody;
 import sophos.uniplusapiinventario.service.QuantidadeService;
 import sophos.uniplusapiinventario.util.DateUtil;
 
+import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;

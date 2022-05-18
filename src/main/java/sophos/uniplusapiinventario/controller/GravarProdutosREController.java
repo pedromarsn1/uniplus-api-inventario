@@ -13,6 +13,7 @@ import sophos.uniplusapiinventario.requests.gravar_produtos.GravarProdutosREPutB
 import sophos.uniplusapiinventario.service.GravarProdutosREService;
 import sophos.uniplusapiinventario.util.DateUtil;
 
+import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
