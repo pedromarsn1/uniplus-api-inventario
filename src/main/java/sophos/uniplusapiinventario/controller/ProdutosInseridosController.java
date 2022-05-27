@@ -32,7 +32,9 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
 public class ProdutosInseridosController {
     @Autowired
     private final DateUtil dateUtil;
+    @Autowired
     private final ProdutosInseridosRepository produtosInseridosRepository;
+    @Autowired
     private final ProdutosInseridosService produtosInseridosService;
 
    @NotNull
@@ -60,6 +62,13 @@ public class ProdutosInseridosController {
     public ResponseEntity<ProdutosInseridosEntity> save(@RequestBody ProdutosInseridosPostRequestBody produtosInseridosPostRequestBody) {
         return new ResponseEntity<>(produtosInseridosService.save(produtosInseridosPostRequestBody), HttpStatus.CREATED);
     }
+
+    @DeleteMapping(path = "/delete-all/{id}")
+    public ResponseEntity<Void> deleteAll(){
+       produtosInseridosService.deleteAll();
+       return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    };
+
 
     @DeleteMapping(path = "/{id}")
     public ResponseEntity<Void> delete(@PathVariable int id) {

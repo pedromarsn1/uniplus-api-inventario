@@ -1,5 +1,6 @@
 package sophos.uniplusapiinventario.service;
 
+import com.sun.istack.NotNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -19,6 +20,11 @@ public class ProdutosInseridosService {
 
     public List<ProdutosInseridosEntity> listAll() {
         return produtosInseridosRepository.findAll();
+    }
+
+    @NotNull
+    public void deleteAll(){
+        produtosInseridosRepository.deleteAll(listAll());
     }
 
     public ProdutosInseridosEntity findbyidOrThrowBadRequestException(int id) {

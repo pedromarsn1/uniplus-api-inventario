@@ -12,6 +12,7 @@ import sophos.uniplusapiinventario.requests.quantidade.QuantidadePutRequestBody;
 
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Slf4j
@@ -20,7 +21,17 @@ public class QuantidadeService {
     private final QuantidadeRepository quantidadeRepository;
 
     public List<QuantidadeEntity> listAll() {
-        return quantidadeRepository.findAll();
+        var quantidades = quantidadeRepository.findAll();
+        var map = quantidades.stream().collect(Collectors.groupingBy(
+                QuantidadeEntity::getCodProd, Collectors.summingDouble(QuantidadeEntity::getQuantidade)
+        ));
+        return map.entrySet().stream().map(
+                value -> {
+                    var novaQtd = quantidades.stream().filter(qtd -> qtd.getCodProd().equals(value.getKey())).findFirst().get();
+                    novaQtd.setQuantidade(value.getValue());
+                    return novaQtd;
+                }
+        ).collect(Collectors.toList());
     }
 
     public QuantidadeEntity findbyidOrThrowBadRequestException(int id) {
