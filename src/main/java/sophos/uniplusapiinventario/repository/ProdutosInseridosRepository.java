@@ -8,6 +8,6 @@ import java.util.List;
 
 @Repository
 public interface ProdutosInseridosRepository extends JpaRepository<ProdutosInseridosEntity, Integer> {
-
-    // void deleteAll(List<ProdutosInseridosEntity> entities);
+    @Override
+    void deleteAll();
 }

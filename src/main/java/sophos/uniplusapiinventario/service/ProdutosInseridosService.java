@@ -24,7 +24,7 @@ public class ProdutosInseridosService {
 
     @NotNull
     public void deleteAll(){
-        produtosInseridosRepository.deleteAll(listAll());
+        produtosInseridosRepository.deleteAll();
     }
 
     public ProdutosInseridosEntity findbyidOrThrowBadRequestException(int id) {
@@ -38,7 +38,7 @@ public class ProdutosInseridosService {
 
         return produtosInseridosRepository.save(ProdutosInseridosEntity.builder()
                 .id(produtosInseridosPostRequestBody.getId())
-//                .idProduto(produtosInseridosPostRequestBody.getIdProduto())
+                .idProd(produtosInseridosPostRequestBody.getIdProduto())
                 .codProduto(produtosInseridosPostRequestBody.getCodProduto())
                 .nome(produtosInseridosPostRequestBody.getNome())
                 .unidade(produtosInseridosPostRequestBody.getUnidade())

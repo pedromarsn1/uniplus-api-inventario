@@ -46,6 +46,7 @@ public class QuantidadeService {
         return quantidadeRepository.save(QuantidadeEntity.builder()
                 .nome(quantidadePostRequestBody.getNomeQuantidade())
                 .id(quantidadePostRequestBody.getIdQuantidade())
+                .idProd(quantidadePostRequestBody.getIdProduto())
                 .codProd(quantidadePostRequestBody.getCodProd())
                 .quantidade(quantidadePostRequestBody.getQuantidade())
                 .build());

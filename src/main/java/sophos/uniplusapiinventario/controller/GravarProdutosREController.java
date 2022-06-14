@@ -57,7 +57,7 @@ public class GravarProdutosREController {
         if (antigoProduto.isPresent()){
             GravarProdutosReservadosEstocadosEntity produto = antigoProduto.get();
             produto.setId(gravarProdutosREPutBody.getId());
-            produto.setIdProduto(gravarProdutosREPutBody.getIdProduto());
+            produto.setIdProd(gravarProdutosREPutBody.getIdProduto());
             produto.setQtdEstocada(gravarProdutosREPutBody.getQtdEstocada());
             gravarRERepository.save(produto);
             return new ResponseEntity<>(produto,HttpStatus.OK);

@@ -58,6 +58,7 @@ public class QuantidadeController {
 
         if(antigaQuantidade.isPresent()){
             QuantidadeEntity quantidade = antigaQuantidade.get();
+            quantidade.setIdProd(quantidadePutRequestBody.getCodProd());
             quantidade.setQuantidade(quantidadePutRequestBody.getQuantidade());
 
             quantidadeRepository.save(quantidade);

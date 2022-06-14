@@ -63,7 +63,7 @@ public class ProdutosInseridosController {
         return new ResponseEntity<>(produtosInseridosService.save(produtosInseridosPostRequestBody), HttpStatus.CREATED);
     }
 
-    @DeleteMapping(path = "/delete-all/{id}")
+    @DeleteMapping(path = "/delete-all")
     public ResponseEntity<Void> deleteAll(){
        produtosInseridosService.deleteAll();
        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -82,6 +82,7 @@ public class ProdutosInseridosController {
         if (antigoProduto.isPresent()) {
             ProdutosInseridosEntity produto = antigoProduto.get();
             produto.setNome(produtosInseridosPutRequestBody.getNome());
+            produto.setIdProd(produtosInseridosPutRequestBody.getIdProduto());
             produto.setCodProduto(produtosInseridosPutRequestBody.getCodProduto());
             produto.setUnidade(produtosInseridosPutRequestBody.getUnidade());
             produto.setQtdEstocada(produtosInseridosPutRequestBody.getQtdEstocada());

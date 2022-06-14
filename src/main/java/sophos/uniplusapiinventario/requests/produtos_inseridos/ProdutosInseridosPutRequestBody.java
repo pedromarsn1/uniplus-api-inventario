@@ -6,7 +6,7 @@ import sophos.uniplusapiinventario.domain.entity.ProdutoEntity;
 @Data
 public class ProdutosInseridosPutRequestBody {
     private Integer id;
-    private ProdutoEntity idProduto;
+    private Integer idProduto;
     private String nome;
     private long codProduto;
     private String unidade;

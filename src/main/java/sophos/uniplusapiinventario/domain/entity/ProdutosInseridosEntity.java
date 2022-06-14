@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -20,6 +21,8 @@ public class ProdutosInseridosEntity {
     private Integer id;
 
     private String nome;
+
+    private Integer idProd;
 
     @Column(name = "codigo")
     private long codProduto;

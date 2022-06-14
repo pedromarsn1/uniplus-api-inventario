@@ -22,7 +22,7 @@ public class GravarProdutosReservadosEstocadosEntity {
     private Integer id;
 
     @Column(name = "idproduto")
-    private Integer idProduto;
+    private Integer idProd;
 
     @Column(name = "quantidadeentrada")
     private Integer qtdEstocada;

@@ -31,7 +31,7 @@ public class GravarProdutosREService {
     public GravarProdutosReservadosEstocadosEntity save(GravarProdutosREPostBody gravarProdutosREPostBody){
         return gravarRERepository.save(GravarProdutosReservadosEstocadosEntity.builder()
                 .id(gravarProdutosREPostBody.getId())
-                .idProduto(gravarProdutosREPostBody.getIdProduto())
+                .idProd(gravarProdutosREPostBody.getIdProduto())
                 .qtdEstocada(gravarProdutosREPostBody.getQtdEstocada()).build());
     }
 

@@ -20,6 +20,9 @@ public class QuantidadeEntity {
     @Id
     private Integer id;
 
+    @Column(name = "idproduto")
+    private Integer idProd;
+
     @Column( name = "quantidade")
     private Double quantidade;
 
