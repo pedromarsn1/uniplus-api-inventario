@@ -38,7 +38,7 @@ public class ProdutosInseridosService {
 
         return produtosInseridosRepository.save(ProdutosInseridosEntity.builder()
                 .id(produtosInseridosPostRequestBody.getId())
-                .idProd(produtosInseridosPostRequestBody.getIdProduto())
+                .idProd(produtosInseridosPostRequestBody.getId())
                 .codProduto(produtosInseridosPostRequestBody.getCodProduto())
                 .nome(produtosInseridosPostRequestBody.getNome())
                 .unidade(produtosInseridosPostRequestBody.getUnidade())
