@@ -18,4 +18,4 @@ Para executar o projeto, siga as instruções abaixo:
 2. Faça clone deste projeto em algum diretório do seu computador
 3. Entre no novo diretório gerado a partir do clone
 4. Execute ./mvnw clean install
-5. Na pasta target, execute java -jar document-manager-0.0.1-SNAPSHOT.jar
+5. Na pasta target, execute java -jar uniplus-api-inventario-0.0.1-SNAPSHOT.jar
